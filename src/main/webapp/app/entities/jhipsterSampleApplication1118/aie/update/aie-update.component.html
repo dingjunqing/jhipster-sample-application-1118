@@ -1,0 +1,271 @@
+<div class="d-flex justify-content-center">
+  <div class="col-8">
+    <form name="editForm" novalidate (ngSubmit)="save()" [formGroup]="editForm">
+      <h2
+        id="jhi-aie-heading"
+        data-cy="AIECreateUpdateHeading"
+        jhiTranslate="jhipsterSampleApplication1118App.jhipsterSampleApplication1118AIe.home.createOrEditLabel"
+      >
+        Create or edit a AIE
+      </h2>
+
+      <div>
+        <jhi-alert-error></jhi-alert-error>
+
+        @if (editForm.controls.id.value !== null) {
+          @let idRef = editForm.get('id')!;
+          <div class="mb-3">
+            <label class="form-label" for="field_id" jhiTranslate="jhipsterSampleApplication1118App.jhipsterSampleApplication1118AIe.id"
+              >Id</label
+            >
+            <input type="text" class="form-control" name="id" id="field_id" data-cy="id" formControlName="id" [readonly]="true" />
+            @if (idRef.invalid && (idRef.dirty || idRef.touched)) {
+              <div>
+                @if (editForm.get('id')?.errors?.required) {
+                  <small class="form-text text-danger" jhiTranslate="entity.validation.required">This field is required.</small>
+                }
+              </div>
+            }
+          </div>
+        }
+
+        @let nameRef = editForm.get('name')!;
+        <div class="mb-3">
+          <label class="form-label" for="field_name" jhiTranslate="jhipsterSampleApplication1118App.jhipsterSampleApplication1118AIe.name"
+            >Name</label
+          >
+          <input type="text" class="form-control" name="name" id="field_name" data-cy="name" formControlName="name" />
+          @if (nameRef.invalid && (nameRef.dirty || nameRef.touched)) {
+            <div>
+              @if (editForm.get('name')?.errors?.required) {
+                <small class="form-text text-danger" jhiTranslate="entity.validation.required">This field is required.</small>
+              }
+            </div>
+          }
+        </div>
+
+        @let typeRef = editForm.get('type')!;
+        <div class="mb-3">
+          <label class="form-label" for="field_type" jhiTranslate="jhipsterSampleApplication1118App.jhipsterSampleApplication1118AIe.type"
+            >Type</label
+          >
+          <input type="text" class="form-control" name="type" id="field_type" data-cy="type" formControlName="type" />
+          @if (typeRef.invalid && (typeRef.dirty || typeRef.touched)) {
+            <div>
+              @if (editForm.get('type')?.errors?.required) {
+                <small class="form-text text-danger" jhiTranslate="entity.validation.required">This field is required.</small>
+              }
+            </div>
+          }
+        </div>
+
+        <div class="mb-3">
+          <label
+            class="form-label"
+            for="field_description"
+            jhiTranslate="jhipsterSampleApplication1118App.jhipsterSampleApplication1118AIe.description"
+            >Description</label
+          >
+          <input
+            type="text"
+            class="form-control"
+            name="description"
+            id="field_description"
+            data-cy="description"
+            formControlName="description"
+          />
+        </div>
+
+        @let createdAtRef = editForm.get('createdAt')!;
+        <div class="mb-3">
+          <label
+            class="form-label"
+            for="field_createdAt"
+            jhiTranslate="jhipsterSampleApplication1118App.jhipsterSampleApplication1118AIe.createdAt"
+            >Created At</label
+          >
+          <div class="d-flex">
+            <input
+              id="field_createdAt"
+              data-cy="createdAt"
+              type="datetime-local"
+              class="form-control"
+              name="createdAt"
+              formControlName="createdAt"
+              placeholder="YYYY-MM-DD HH:mm"
+            />
+          </div>
+          @if (createdAtRef.invalid && (createdAtRef.dirty || createdAtRef.touched)) {
+            <div>
+              @if (editForm.get('createdAt')?.errors?.required) {
+                <small class="form-text text-danger" jhiTranslate="entity.validation.required">This field is required.</small>
+              }
+              <small
+                class="form-text text-danger"
+                [hidden]="!editForm.get('createdAt')?.errors?.datetimelocal"
+                jhiTranslate="entity.validation.datetimelocal"
+                >This field should be a date and time.</small
+              >
+            </div>
+          }
+        </div>
+
+        @let createdByRef = editForm.get('createdBy')!;
+        <div class="mb-3">
+          <label
+            class="form-label"
+            for="field_createdBy"
+            jhiTranslate="jhipsterSampleApplication1118App.jhipsterSampleApplication1118AIe.createdBy"
+            >Created By</label
+          >
+          <input type="text" class="form-control" name="createdBy" id="field_createdBy" data-cy="createdBy" formControlName="createdBy" />
+          @if (createdByRef.invalid && (createdByRef.dirty || createdByRef.touched)) {
+            <div>
+              @if (editForm.get('createdBy')?.errors?.required) {
+                <small class="form-text text-danger" jhiTranslate="entity.validation.required">This field is required.</small>
+              }
+            </div>
+          }
+        </div>
+
+        <div class="mb-3">
+          <label class="form-label" for="field_icon" jhiTranslate="jhipsterSampleApplication1118App.jhipsterSampleApplication1118AIe.icon"
+            >Icon</label
+          >
+          <input type="text" class="form-control" name="icon" id="field_icon" data-cy="icon" formControlName="icon" />
+        </div>
+
+        <div class="mb-3">
+          <label
+            class="form-label"
+            for="field_version"
+            jhiTranslate="jhipsterSampleApplication1118App.jhipsterSampleApplication1118AIe.version"
+            >Version</label
+          >
+          <input type="text" class="form-control" name="version" id="field_version" data-cy="version" formControlName="version" />
+        </div>
+
+        <div class="mb-3">
+          <label
+            class="form-label"
+            for="field_category"
+            jhiTranslate="jhipsterSampleApplication1118App.jhipsterSampleApplication1118AIe.category"
+            >Category</label
+          >
+          <input type="text" class="form-control" name="category" id="field_category" data-cy="category" formControlName="category" />
+        </div>
+
+        <div class="mb-3">
+          <label class="form-label" for="field_rate" jhiTranslate="jhipsterSampleApplication1118App.jhipsterSampleApplication1118AIe.rate"
+            >Rate</label
+          >
+          <input type="number" class="form-control" name="rate" id="field_rate" data-cy="rate" formControlName="rate" />
+        </div>
+
+        @let aieMetadataRef = editForm.get('aieMetadata')!;
+        <div class="mb-3">
+          <label
+            class="form-label"
+            for="field_aieMetadata"
+            jhiTranslate="jhipsterSampleApplication1118App.jhipsterSampleApplication1118AIe.aieMetadata"
+            >Aie Metadata</label
+          >
+          <input
+            type="text"
+            class="form-control"
+            name="aieMetadata"
+            id="field_aieMetadata"
+            data-cy="aieMetadata"
+            formControlName="aieMetadata"
+          />
+          @if (aieMetadataRef.invalid && (aieMetadataRef.dirty || aieMetadataRef.touched)) {
+            <div>
+              @if (editForm.get('aieMetadata')?.errors?.required) {
+                <small class="form-text text-danger" jhiTranslate="entity.validation.required">This field is required.</small>
+              }
+            </div>
+          }
+        </div>
+
+        @let userIDRef = editForm.get('userID')!;
+        <div class="mb-3">
+          <label
+            class="form-label"
+            for="field_userID"
+            jhiTranslate="jhipsterSampleApplication1118App.jhipsterSampleApplication1118AIe.userID"
+            >User ID</label
+          >
+          <input type="text" class="form-control" name="userID" id="field_userID" data-cy="userID" formControlName="userID" />
+          @if (userIDRef.invalid && (userIDRef.dirty || userIDRef.touched)) {
+            <div>
+              @if (editForm.get('userID')?.errors?.required) {
+                <small class="form-text text-danger" jhiTranslate="entity.validation.required">This field is required.</small>
+              }
+            </div>
+          }
+        </div>
+
+        @let isPublicRef = editForm.get('isPublic')!;
+        <div class="mb-3">
+          <label
+            class="form-label"
+            for="field_isPublic"
+            jhiTranslate="jhipsterSampleApplication1118App.jhipsterSampleApplication1118AIe.isPublic"
+            >Is Public</label
+          >
+          <input type="checkbox" class="form-check" name="isPublic" id="field_isPublic" data-cy="isPublic" formControlName="isPublic" />
+          @if (isPublicRef.invalid && (isPublicRef.dirty || isPublicRef.touched)) {
+            <div>
+              @if (editForm.get('isPublic')?.errors?.required) {
+                <small class="form-text text-danger" jhiTranslate="entity.validation.required">This field is required.</small>
+              }
+            </div>
+          }
+        </div>
+
+        <div class="mb-3">
+          <label
+            class="form-label"
+            for="field_organizationName"
+            jhiTranslate="jhipsterSampleApplication1118App.jhipsterSampleApplication1118AIe.organizationName"
+            >Organization Name</label
+          >
+          <input
+            type="text"
+            class="form-control"
+            name="organizationName"
+            id="field_organizationName"
+            data-cy="organizationName"
+            formControlName="organizationName"
+          />
+        </div>
+
+        <div class="mb-3">
+          <label
+            class="form-label"
+            for="field_tenantID"
+            jhiTranslate="jhipsterSampleApplication1118App.jhipsterSampleApplication1118AIe.tenantID"
+            >Tenant ID</label
+          >
+          <input type="text" class="form-control" name="tenantID" id="field_tenantID" data-cy="tenantID" formControlName="tenantID" />
+        </div>
+      </div>
+
+      <div>
+        <button type="button" id="cancel-save" data-cy="entityCreateCancelButton" class="btn btn-secondary" (click)="previousState()">
+          <fa-icon icon="ban"></fa-icon>&nbsp;<span jhiTranslate="entity.action.cancel">Cancel</span>
+        </button>
+
+        <button
+          type="submit"
+          id="save-entity"
+          data-cy="entityCreateSaveButton"
+          [disabled]="editForm.invalid || isSaving"
+          class="btn btn-primary"
+        >
+          <fa-icon icon="save"></fa-icon>&nbsp;<span jhiTranslate="entity.action.save">Save</span>
+        </button>
+      </div>
+    </form>
+  </div>
+</div>

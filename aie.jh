@@ -1,0 +1,26 @@
+entity AIE {
+    id String required,
+    name String required,
+    type String required,
+    description String,
+    createdAt ZonedDateTime required,
+    createdBy String required,
+    icon String,
+    version String,
+    category String,
+    rate Double,
+    aieMetadata String required,
+    userID String required,
+    isPublic Boolean required,
+    organizationName String,
+    tenantID String
+}
+
+// Set pagination options
+paginate AIE with pagination
+
+// Use Data Transfer Objects (DTO)
+// dto * with mapstruct
+
+// Set service options to all except few
+service all with serviceImpl
