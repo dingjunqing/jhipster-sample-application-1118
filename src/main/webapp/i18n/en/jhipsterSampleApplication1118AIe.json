@@ -1,0 +1,37 @@
+{
+  "jhipsterSampleApplication1118App": {
+    "jhipsterSampleApplication1118AIe": {
+      "home": {
+        "title": "AIES",
+        "refreshListLabel": "Refresh list",
+        "createLabel": "Create a new AIE",
+        "createOrEditLabel": "Create or edit a AIE",
+        "notFound": "No AIES found"
+      },
+      "created": "A new AIE is created with identifier {{ param }}",
+      "updated": "A AIE is updated with identifier {{ param }}",
+      "deleted": "A AIE is deleted with identifier {{ param }}",
+      "delete": {
+        "question": "Are you sure you want to delete AIE {{ id }}?"
+      },
+      "detail": {
+        "title": "AIE"
+      },
+      "id": "Id",
+      "name": "Name",
+      "type": "Type",
+      "description": "Description",
+      "createdAt": "Created At",
+      "createdBy": "Created By",
+      "icon": "Icon",
+      "version": "Version",
+      "category": "Category",
+      "rate": "Rate",
+      "aieMetadata": "Aie Metadata",
+      "userID": "User ID",
+      "isPublic": "Is Public",
+      "organizationName": "Organization Name",
+      "tenantID": "Tenant ID"
+    }
+  }
+}

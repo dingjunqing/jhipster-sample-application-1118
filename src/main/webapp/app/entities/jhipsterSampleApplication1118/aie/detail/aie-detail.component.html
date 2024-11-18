@@ -1,0 +1,90 @@
+<div class="d-flex justify-content-center">
+  <div class="col-8">
+    @if (aIE(); as aIERef) {
+      <div>
+        <h2 data-cy="aIEDetailsHeading">
+          <span jhiTranslate="jhipsterSampleApplication1118App.jhipsterSampleApplication1118AIe.detail.title">AIE</span>
+        </h2>
+
+        <hr />
+
+        <jhi-alert-error></jhi-alert-error>
+
+        <jhi-alert></jhi-alert>
+
+        <dl class="row-md jh-entity-details">
+          <dt><span jhiTranslate="jhipsterSampleApplication1118App.jhipsterSampleApplication1118AIe.id">Id</span></dt>
+          <dd>
+            <span>{{ aIERef.id }}</span>
+          </dd>
+          <dt><span jhiTranslate="jhipsterSampleApplication1118App.jhipsterSampleApplication1118AIe.name">Name</span></dt>
+          <dd>
+            <span>{{ aIERef.name }}</span>
+          </dd>
+          <dt><span jhiTranslate="jhipsterSampleApplication1118App.jhipsterSampleApplication1118AIe.type">Type</span></dt>
+          <dd>
+            <span>{{ aIERef.type }}</span>
+          </dd>
+          <dt><span jhiTranslate="jhipsterSampleApplication1118App.jhipsterSampleApplication1118AIe.description">Description</span></dt>
+          <dd>
+            <span>{{ aIERef.description }}</span>
+          </dd>
+          <dt><span jhiTranslate="jhipsterSampleApplication1118App.jhipsterSampleApplication1118AIe.createdAt">Created At</span></dt>
+          <dd>
+            <span>{{ aIERef.createdAt | formatMediumDatetime }}</span>
+          </dd>
+          <dt><span jhiTranslate="jhipsterSampleApplication1118App.jhipsterSampleApplication1118AIe.createdBy">Created By</span></dt>
+          <dd>
+            <span>{{ aIERef.createdBy }}</span>
+          </dd>
+          <dt><span jhiTranslate="jhipsterSampleApplication1118App.jhipsterSampleApplication1118AIe.icon">Icon</span></dt>
+          <dd>
+            <span>{{ aIERef.icon }}</span>
+          </dd>
+          <dt><span jhiTranslate="jhipsterSampleApplication1118App.jhipsterSampleApplication1118AIe.version">Version</span></dt>
+          <dd>
+            <span>{{ aIERef.version }}</span>
+          </dd>
+          <dt><span jhiTranslate="jhipsterSampleApplication1118App.jhipsterSampleApplication1118AIe.category">Category</span></dt>
+          <dd>
+            <span>{{ aIERef.category }}</span>
+          </dd>
+          <dt><span jhiTranslate="jhipsterSampleApplication1118App.jhipsterSampleApplication1118AIe.rate">Rate</span></dt>
+          <dd>
+            <span>{{ aIERef.rate }}</span>
+          </dd>
+          <dt><span jhiTranslate="jhipsterSampleApplication1118App.jhipsterSampleApplication1118AIe.aieMetadata">Aie Metadata</span></dt>
+          <dd>
+            <span>{{ aIERef.aieMetadata }}</span>
+          </dd>
+          <dt><span jhiTranslate="jhipsterSampleApplication1118App.jhipsterSampleApplication1118AIe.userID">User ID</span></dt>
+          <dd>
+            <span>{{ aIERef.userID }}</span>
+          </dd>
+          <dt><span jhiTranslate="jhipsterSampleApplication1118App.jhipsterSampleApplication1118AIe.isPublic">Is Public</span></dt>
+          <dd>
+            <span>{{ aIERef.isPublic }}</span>
+          </dd>
+          <dt>
+            <span jhiTranslate="jhipsterSampleApplication1118App.jhipsterSampleApplication1118AIe.organizationName">Organization Name</span>
+          </dt>
+          <dd>
+            <span>{{ aIERef.organizationName }}</span>
+          </dd>
+          <dt><span jhiTranslate="jhipsterSampleApplication1118App.jhipsterSampleApplication1118AIe.tenantID">Tenant ID</span></dt>
+          <dd>
+            <span>{{ aIERef.tenantID }}</span>
+          </dd>
+        </dl>
+
+        <button type="submit" (click)="previousState()" class="btn btn-info" data-cy="entityDetailsBackButton">
+          <fa-icon icon="arrow-left"></fa-icon>&nbsp;<span jhiTranslate="entity.action.back">Back</span>
+        </button>
+
+        <button type="button" [routerLink]="['/jhipstersampleapplication1118/aie', aIERef.id, 'edit']" class="btn btn-primary">
+          <fa-icon icon="pencil-alt"></fa-icon>&nbsp;<span jhiTranslate="entity.action.edit">Edit</span>
+        </button>
+      </div>
+    }
+  </div>
+</div>
